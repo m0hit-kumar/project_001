@@ -1,75 +1,26 @@
-<html>
-<head>
-<title>PHP User Registration Form</title>
-<link href="./css/style.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-    <form name="frmRegistration" method="post" action="">
-        <div class="demo-table">
-        <div class="form-head">Sign Up</div>
-            
-<?php
-if (! empty($errorMessage) && is_array($errorMessage)) {
-    ?>	
-            <div class="error-message">
-            <?php 
-            foreach($errorMessage as $message) {
-                echo $message . "<br/>";
-            }
-            ?>
-            </div>
-<?php
-}
-?>
-            <div class="field-column">
-                <label>Username</label>
-                <div>
-                    <input type="text" class="demo-input-box"
-                        name="userName"
-                        value="<?php if(isset($_POST['userName'])) echo $_POST['userName']; ?>">
-                </div>
-            </div>
-            
-            <div class="field-column">
-                <label>Password</label>
-                <div><input type="password" class="demo-input-box"
-                    name="password" value=""></div>
-            </div>
-            <div class="field-column">
-                <label>Confirm Password</label>
-                <div>
-                    <input type="password" class="demo-input-box"
-                        name="confirm_password" value="">
-                </div>
-            </div>
-            <div class="field-column">
-                <label>Display Name</label>
-                <div>
-                    <input type="text" class="demo-input-box"
-                        name="firstName"
-                        value="<?php if(isset($_POST['firstName'])) echo $_POST['firstName']; ?>">
-                </div>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>login page</title>
+    <link rel="stylesheet" type="text/css" href="aboutus_css/aboutus_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
 
-            </div>
-            <div class="field-column">
-                <label>Email</label>
-                <div>
-                    <input type="text" class="demo-input-box"
-                        name="userEmail"
-                        value="<?php if(isset($_POST['userEmail'])) echo $_POST['userEmail']; ?>">
-                </div>
-            </div>
-            <div class="field-column">
-                <div class="terms">
-                    <input type="checkbox" name="terms"> I accept terms
-                    and conditions
-                </div>
-                <div>
-                    <input type="submit"
-                        name="register-user" value="Register"
-                       ! class="btnRegister">
-                </div>
-            </div>
-        </div>
-    </form>
-</body>
+<div class="contact-section">
+
+  <h1>Contact Us</h1>
+  <div class="border"></div>
+  <form class="contact-form" action="insert.php" method="POST">
+    <input type="text" name="username" class="contact-form-text" placeholder="Your name">
+    <input type="email"  name="email" class="contact-form-text" placeholder="Your email">
+    <input type="text" name="phone" class="contact-form-text" placeholder="Your phone">
+    <textarea class="contact-form-text" name="message" placeholder="Your message"></textarea>
+    <input type="submit" name="submit" class="contact-form-btn" value="Send">
+  </form>
+</div>
+
+
+  </body>
+</html>
